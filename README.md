@@ -1,1 +1,1 @@
-# nix_disko
+# nix
