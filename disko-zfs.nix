@@ -20,13 +20,7 @@
               size = "100%";
               content = {
                 type = "zfs";
-                pool = "rpool";  # Recommended to name your ZFS pool
-                # Consider adding these options
-                options = {
-                  compression = "zstd";  # Good compression with low overhead
-                  atime = "off";  # Improves performance
-                  xattr = "sa";  # Small performance improvement
-                };
+                pool = "rpool";
               };
             };
           };
@@ -36,10 +30,16 @@
     zpool = {
       rpool = {
         type = "zpool";
-        # Consider these additional pool-level options
         options = {
-          ashift = "12";  # Optimal for modern drives
-          autotrim = "on";  # Good for SSDs
+          ashift = "12";
+          autotrim = "on";
+        };
+        datasets = {
+          # Add ZFS dataset configurations here if needed
+          "rpool/root" = {
+            type = "zfs_fs";
+            mountpoint = "/";
+          };
         };
       };
     };
