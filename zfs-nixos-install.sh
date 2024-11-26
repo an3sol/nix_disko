@@ -89,9 +89,8 @@ create_zpool() {
         -O mountpoint=none \
         zroot "$ZFS_PART"
 
-    # Enable advanced ZFS features
-    # zpool set feature@large_dnode=enabled zroot
-    # zpool set feature@sha512@soma=enabled zroot
+    # Remove unsupported feature flags
+    #zpool set feature@large_dnode=enabled zroot
 }
 
 # Create ZFS datasets
