@@ -90,8 +90,8 @@ create_zpool() {
         zroot "$ZFS_PART"
 
     # Enable advanced ZFS features
-    zpool set feature@large_dnode=enabled zroot
-    zpool set feature@sha512@soma=enabled zroot
+    # zpool set feature@large_dnode=enabled zroot
+    # zpool set feature@sha512@soma=enabled zroot
 }
 
 # Create ZFS datasets
